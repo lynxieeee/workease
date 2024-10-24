@@ -14,9 +14,9 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, 'dist'),  // 指定静态资源目录
+      directory: path.join(__dirname, 'dist'), // 指定静态资源目录
     },
-    compress: true,  // 启用gzip压缩
+    compress: true, // 启用gzip压缩
     port: 8081,
   },
   resolve: {
@@ -71,7 +71,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/fav.ico',  // 添加这行确保 favicon 被复制到 dist
+      favicon: './public/fav.ico',
     }),
   ],
 };

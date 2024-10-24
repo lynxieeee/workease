@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './tailwind.css'; // 引入 Tailwind CSS
+import './tailwind.css';
 import 'antd/dist/reset.css';
 import type { ThemeConfig } from 'antd';
 import { ConfigProvider } from 'antd';

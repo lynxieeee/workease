@@ -12,11 +12,12 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
+    allowedHosts: "all",
     historyApiFallback: true,
     static: {
-      directory: path.join(__dirname, 'dist'),  // 指定静态资源目录
+      directory: path.join(__dirname, 'dist'),
     },
-    compress: true,  // 启用gzip压缩
+    compress: true,
     port: 8081,
   },
   resolve: {
@@ -39,8 +40,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              outputPath: 'images/', // 指定输出路径
-              publicPath: '/images/', // 访问路径
+              outputPath: 'images/',
+              publicPath: '/images/',
             },
           },
         ],
@@ -52,12 +53,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: '/', // 确保 favicon 出现在 dist 根目录
+              outputPath: '/',
             },
           },
         ],
       },
-      // 处理 CSS 和 SCSS 的规则
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
@@ -71,7 +71,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/fav.ico',  // 添加这行确保 favicon 被复制到 dist
+      favicon: './public/fav.ico',
     }),
   ],
 };
